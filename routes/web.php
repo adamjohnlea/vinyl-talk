@@ -24,7 +24,7 @@ Route::post('/logout',      [UserController::class, "logout"])->middleware('auth
 Route::get('manage-avatar', [UserController::class, "showAvatarForm"])->middleware('auth');
 Route::post('manage-avatar', [UserController::class, "storeAvatar"])->middleware('auth');
 
-Route::get ( 'explore', [ ExploreController::class, "index" ] );
+Route::get ( 'explore', [ ExploreController::class, "index" ] )->middleware('auth');
 
 Route::post('create-follow/{user:username}', [FollowController::class, "createFollow"])->middleware('auth');
 Route::post('remove-follow/{user:username}', [FollowController::class, "removeFollow"])->middleware('auth');
