@@ -17,9 +17,11 @@
     <div class="container d-flex flex-column flex-md-row align-items-center p-3">
         <h4 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white">VinylTalk</a></h4>
 
-        <a href="/explore/" class="mr-4 text-light font-weight-bold">
-            Explore
-        </a>
+        @auth
+            <a href="/explore/" class="mr-4 text-light font-weight-bold">
+                Explore
+            </a>
+        @endauth
 
         @auth
             <div class="flex-row my-3 my-md-0">
