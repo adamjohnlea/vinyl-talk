@@ -28,7 +28,7 @@
                     @else
                     <form class="ml-auto d-inline" action="/remove-follow/{{ $user->username }}" method="POST">
                         @csrf
-                        <button class="btn btn-primary btn-sm">Unfollow <i class="fas fa-user-minus"></i></button>
+                        <button class="btn btn-danger btn-sm">Unfollow <i class="fas fa-user-minus"></i></button>
                     </form>
                     @endif
                 @endif
