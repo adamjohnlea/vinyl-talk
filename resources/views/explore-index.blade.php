@@ -40,12 +40,14 @@
     <div class="list-group">
         @foreach($users as $user)
             @if(auth()->user()->id !== $user->id)
-                <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <a href="/profile/{{ $user->username }}" class="">
-                        <img class="avatar-tiny" src="{{ $user->avatar }}" />
-                        <strong>{{ $user->username }}</strong>
-                    </a>
-                </div>
+                @if(!auth()->user()->isFollowing($user))
+                    <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        <a href="/profile/{{ $user->username }}" class="">
+                            <img class="avatar-tiny" src="{{ $user->avatar }}" />
+                            <strong>{{ $user->username }}</strong>
+                        </a>
+                    </div>
+                @endif
             @endif
         @endforeach
     </div>
