@@ -23,12 +23,12 @@
                     @if(!auth()->user()->isFollowing($user))
                     <form class="ml-auto d-inline" action="/create-follow/{{ $user->username }}" method="POST">
                         @csrf
-                        <button class="btn btn-primary btn-sm">Follow <i class="fas fa-user-plus"></i></button>
+                        <button class="btn btn-primary btn-sm">Follow <i class="fas fa-user-plus"></i></i></button>
                     </form>
                     @else
                     <form class="ml-auto d-inline" action="/remove-follow/{{ $user->username }}" method="POST">
                         @csrf
-                        <button class="btn btn-danger btn-sm">Unfollow <i class="fas fa-user-minus"></i></button>
+                        <button class="btn btn-danger btn-sm">Unfollow <i class="fas fa-user-times"></i></button>
                     </form>
                     @endif
                 @endif
