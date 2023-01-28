@@ -16,7 +16,7 @@
                 @else
                     <span>
                         <img class="avatar-tiny" src="{{ $user->avatar }}" />
-                        <strong>{{ $user->username }}</strong> You've made {{ $user->posts_count }} {{ Str::plural( 'post', $user->posts_count ) }}
+                        You've made {{ $user->posts_count }} {{ Str::plural( 'post', $user->posts_count ) }}
                     </span>
                 @endif
                 @if(auth()->user()->id !== $user->id)
